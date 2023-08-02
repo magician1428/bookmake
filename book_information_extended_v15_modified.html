@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Book Information</title>
+</head>
+<body>
+<h1>Book Information</h1>
+<form id="book-info">
+<label for="form-select">Select Form:</label>
+<select id="form-select" onchange="loadFormData(this.value)">
+<option value="">Select...</option>
+<option value="form_1">Form 1</option>
+<option value="form_2">Form 2</option>
+<option value="form_3">Form 3</option>
+<option value="form_4">Form 4</option>
+<option value="form_5">Form 5</option>
+<option value="form_6">Form 6</option>
+<option value="form_7">Form 7</option>
+<option value="form_8">Form 8</option>
+<option value="form_9">Form 9</option>
+<option value="form_10">Form 10</option>
+<option value="form_11">Form 11</option>
+<option value="form_12">Form 12</option>
+</select><br/>
+<label for="data-language">Language:</label>
+<select id="data-language" name="data[language]">
+<option selected="" value="English">English</option>
+<option value="Spanish">Spanish</option>
+<option value="French">French</option>
+<option value="German">German</option>
+<option value="Italian">Italian</option>
+<option value="Dutch">Dutch</option>
+<option value="Portuguese">Portuguese</option>
+<option value="Japanese">Japanese</option>
+</select><br/>
+<label for="data-description">Description:</label>
+<textarea id="data-description" name="data[description]"></textarea><br/>
+<label for="data-contributor-role">Contributor Role:</label>
+<select id="data-contributor-role" name="data[contributor_role]">
+<option value="Author">Author</option>
+<option value="Editor">Editor</option>
+<option value="Foreword">Foreword</option>
+<option value="Illustrator">Illustrator</option>
+<option value="Introduction">Introduction</option>
+<option value="Narrator">Narrator</option>
+<option value="Photographer">Photographer</option>
+<option value="Preface">Preface</option>
+<option value="Translator">Translator</option>
+</select><br/>
+<label for="data-title">Title:</label>
+<input id="data-title" name="data[title]" type="text" value="The Worm Ouroboros"/><br/>
+<label for="data-subtitle">Subtitle:</label>
+<input id="data-subtitle" name="data[subtitle]" type="text" value=""/><br/>
+<label for="data-publisher-label">Publisher Label:</label>
+<input id="data-publisher-label" name="data[publisher_label]" type="text" value=""/><br/>
+<label for="data-edition-number">Edition Number:</label>
+<input id="data-edition-number" name="data[edition_number]" type="text" value=""/><br/>
+<label for="data-primary-author-last-name">Primary Author Last Name:</label>
+<input id="data-primary-author-last-name" name="data[primary_author][last_name]" type="text" value="Eddison"/><br/>
+<label for="data-primary-author-first-name">Primary Author First Name:</label>
+<input id="data-primary-author-first-name" name="data[primary_author][first_name]" type="text" value="E. R."/><br/>
+<label for="data-contributors-0-first-name">Contributors First Name:</label>
+<input id="data-contributors-0-first-name" name="data[contributors][0][first_name]" type="text" value=""/><br/>
+<label for="data-contributors-0-last-name">Contributors Last Name:</label>
+<input id="data-contributors-0-last-name" name="data[contributors][0][last_name]" type="text" value=""/><br/>
+<label for="data-public-domain">Public Domain:</label>
+<input checked="" id="data-public-domain-no" name="data[public_domain]" type="radio" value="false"/>
+<label for="data-public-domain-no">No</label><br/>
+<input id="data-public-domain-yes" name="data[public_domain]" type="radio" value="true"/>
+<label for="data-public-domain-yes">Yes</label><br/>
+<label for="data-adult-content">Adult Content:</label>
+<input checked="" id="data-adult-content-no" name="data[adult_content]" type="radio" value="no"/>
+<label for="data-adult-content-no">No</label><br/>
+<input id="data-adult-content-yes" name="data[adult_content]" type="radio" value="yes"/>
+<label for="data-adult-content-yes">Yes</label><br/>
+<label for="data-reading-interest-age-min">Reading Interest Age Min:</label>
+<select id="data-reading-interest-age-min" name="data[reading_interest_age][min]">
+<option selected="" value="">Select</option>
+<option value="Baby">Baby</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18+">18+</option>
+</select><br/>
+<label for="data-reading-interest-age-max">Reading Interest Age Max:</label>
+<select id="data-reading-interest-age-max" name="data[reading_interest_age][max]">
+<option selected="" value="">Select</option>
+<option value="Baby">Baby</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18+">18+</option>
+</select><br/>
+<label for="data-marketplace">Market Place:</label>
+<select id="data-marketplace" name="data[marketplace]">
+<option selected="" value="Amazon.com">Amazon.com</option>
+<option value="Amazon.in">Amazon.in</option>
+<option value="Amazon.co.uk">Amazon.co.uk</option>
+<option value="Amazon.de">Amazon.de</option>
+<option value="Amazon.fr">Amazon.fr</option>
+<option value="Amazon.es">Amazon.es</option>
+<option value="Amazon.it">Amazon.it</option>
+<option value="Amazon.nl">Amazon.nl</option>
+<option value="Amazon.co.jp">Amazon.co.jp</option>
+<option value="Amazon.com.br">Amazon.com.br</option>
+<option value="Amazon.ca">Amazon.ca</option>
+<option value="Amazon.com.mx">Amazon.com.mx</option>
+<option value="Amazon.com.au">Amazon.com.au</option>
+</select><br/>
+<label for="data-keywords-0">Keyword 1:</label>
+<input id="data-keywords-0" name="data[keywords][0]" type="text" value="fantasy"/><br/>
+<label for="data-keywords-1">Keyword 2:</label>
+<input id="data-keywords-1" name="data[keywords][1]" type="text" value="classic"/><br/>
+<label for="data-keywords-2">Keyword 3:</label>
+<input id="data-keywords-2" name="data[keywords][2]" type="text" value="adventure"/><br/>
+<label for="data-keywords-3">Keyword 4:</label>
+<input id="data-keywords-3" name="data[keywords][3]" type="text" value="heroic"/><br/>
+<label for="data-keywords-4">Keyword 5:</label>
+<input id="data-keywords-4" name="data[keywords][4]" type="text" value="high fantasy"/><br/>
+<label for="data-keywords-5">Keyword 6:</label>
+<input id="data-keywords-5" name="data[keywords][5]" type="text" value="war"/><br/>
+<label for="data-keywords-6">Keyword 7:</label>
+<input id="data-keywords-6" name="data[keywords][6]" type="text" value="medieval"/><br/>
+</form><script>
+// Fetch form data from JSON file
+fetch('form_data.json')
+    .then(response => response.json())
+    .then(data => {
+        // Now data contains the form data
+        var formData = data;
+    })
+    .catch(error => console.error('Error:', error));
+</script>
+</body>
+</html>
+
